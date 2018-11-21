@@ -1,0 +1,39 @@
+{
+  "name": "fs2youtubemusic",
+  "version": "1.0.0",
+  "description": "Node.js CLI tool that migrates music from your filesystem to your Youtube Music account by liking videos.",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": "./bin/fs2youtubemusic.js",
+  "scripts": {
+    "setup": "npm i",
+    "test": "mocha test/**/*.spec.js",
+    "ci": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/labarilem/fs2youtubemusic.git"
+  },
+  "author": "Marco Labarile",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/labarilem/fs2youtubemusic/issues"
+  },
+  "homepage": "https://github.com/labarilem/fs2youtubemusic#readme",
+  "dependencies": {
+    "asciify": "^1.3.5",
+    "chalk": "^2.3.2",
+    "commander": "^2.15.0",
+    "fs-extra": "^5.0.0",
+    "googleapis": "^35.0.0",
+    "music-metadata": "^3.1.6",
+    "ora": "^2.0.0",
+    "readline-sync": "^1.4.9"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^5.0.4",
+    "@types/ora": "^1.3.4",
+    "chai": "^4.1.2",
+    "mocha": "^5.0.4"
+  }
+}
