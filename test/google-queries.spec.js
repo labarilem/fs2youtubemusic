@@ -6,12 +6,22 @@ const { buildQueryForWork } = require('../lib/google-queries')
 
 describe('google-queries', () => {
 
-  it('buildQueryForWork', (done) => {
-    var artist = "artist";
-    var work = "wonderful song (1999)  [320]";
-    var query = buildQueryForWork(artist, work);
-    expect(query).eq("artist - wonderful song");
-    done();
+  describe('buildQueryForWork', () => {
+
+    it('should remove parens', () => {
+      var artist = "artist";
+      var work = "wonderful song (1999)  [320]";
+      var query = buildQueryForWork(artist, work);
+      expect(query).eq("artist - wonderful song");
+    });
+
+    it('should remove numbers', () => {
+      var artist = "artist";
+      var work = "01. A song";
+      var query = buildQueryForWork(artist, work);
+      expect(query).eq("artist - A song");
+    });
+
   });
 
 });
